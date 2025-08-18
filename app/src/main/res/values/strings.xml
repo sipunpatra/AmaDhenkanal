@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Ama Dhenkanal</string>
     <string name="tourist_destination">Tourist Destination</string>
+    <string name="famous_festival">Famous Festival</string>
 </resources>

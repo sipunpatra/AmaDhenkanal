@@ -1,6 +1,8 @@
 package com.dhenkanal.amadhenkanal
 
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -11,10 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.dhenkanal.amadhenkanal.adapter.BlockAdapterDetailsAdapter
 import com.dhenkanal.amadhenkanal.adapter.ImageAdapter
+import com.dhenkanal.amadhenkanal.databinding.ActivityMainBinding
 import com.dhenkanal.amadhenkanal.model.ImageItem
 import com.dhenkanal.amadhenkanal.model.StoryItem
+import com.dhenkanal.amadhenkanal.ui.DamActivity
+import com.dhenkanal.amadhenkanal.ui.FamousActivity
+import com.dhenkanal.amadhenkanal.ui.MapActivity
+import com.dhenkanal.amadhenkanal.ui.MoreDetailsActivity
+import com.dhenkanal.amadhenkanal.ui.TempleActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding:ActivityMainBinding
     private lateinit var viewPager: ViewPager2
     private lateinit var adapter: ImageAdapter
     private val handler = Handler(Looper.getMainLooper())
@@ -31,12 +40,52 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         uiInitialization()
     }
 
     private fun uiInitialization() {
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_explore -> { /* Your code */ true }
+                R.id.nav_map -> {
+                    startActivity(Intent(this, MapActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    })
+                    finish()
+                    true }
+//                R.id.nav_what_to_do -> { /* Your code */ true }
+//                R.id.nav_event -> { /* Your code */ true }
+                R.id.nav_famous -> {
+                    startActivity(Intent(this, FamousActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    })
+                    finish()
+                    true
+                }
+                R.id.nav_more -> {
+                    startActivity(Intent(this,MoreDetailsActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    })
+                    finish()
+                    true }
+                else -> false
+            }
+        }
+
+        binding.llDam.setOnClickListener {
+           val intent =Intent(applicationContext,DamActivity::class.java)
+            startActivity(intent)
+        }
+        binding.llTemple.setOnClickListener {
+            val intent =Intent(applicationContext,TempleActivity::class.java)
+            startActivity(intent)
+        }
+
+
         val storyRecycler = findViewById<RecyclerView>(R.id.storyRecycler)
 
         val stories = listOf(
