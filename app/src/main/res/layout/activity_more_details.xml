@@ -4,57 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".ui.MoreDetailsActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/storyRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency contact"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_margin="16dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp"/>
-
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tourist_destination"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/storyRecycler"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_cat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Category"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/viewpager"/>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -63,14 +25,14 @@
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:rowOrderPreserved="false"
-        app:layout_constraintTop_toBottomOf="@id/tv_cat"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="597dp">
 
         <!-- Police -->
         <LinearLayout
-            android:id="@+id/llTemple"
+            android:id="@+id/llPolice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -84,20 +46,20 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/temple" />
+                android:src="@drawable/police_badge" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Temple"
+                android:text="Police"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Dam -->
+        <!-- Ambulance -->
         <LinearLayout
-            android:id="@+id/llDam"
+            android:id="@+id/llAmbulance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -111,20 +73,20 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/dam" />
+                android:src="@drawable/ambulance" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Dam"
+                android:text="Ambulance"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- waterFall -->
+        <!-- Fire -->
         <LinearLayout
-            android:id="@+id/llWaterFall"
+            android:id="@+id/llFire"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -138,19 +100,20 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/waterfall" />
+                android:src="@drawable/fire_brigade" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="WaterFall"
+                android:text="Fire"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <!-- WomanHelpLine -->
         <LinearLayout
-            android:id="@+id/llHill"
+            android:id="@+id/llWomanHelpLine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -159,32 +122,6 @@
             android:background="@drawable/bg_button_border"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="12dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/mountain" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="HillView"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/llKingPalace"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_button_border"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:visibility="gone"
             android:padding="12dp">
 
             <ImageView
@@ -196,15 +133,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="King Palace"
+                android:text="WomanHelpLine"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
 
     </GridLayout>
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"

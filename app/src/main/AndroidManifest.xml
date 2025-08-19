@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -16,8 +20,31 @@
         android:theme="@style/Theme.AmaDhenkanal"
         tools:targetApi="31">
         <activity
+            android:name=".ui.FamousActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.WaterfallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.TempleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MoreDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MapActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDumWoQa1zYoggR5TcIubihPdPwGreFnLE" />
+
         <activity
             android:name=".ui.SplashScreenActivity"
             android:exported="true">

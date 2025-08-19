@@ -2,4 +2,28 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimaryDark">#007eb3</color>
+    <color name="textColor">#ffe781</color>
+
+
+    <color name="green">#0DB614</color>
+    <!--    <color name="blue">#0500BC</color>-->
+    <color name="transparent_blue">#CB0500BC</color>
+    <color name="red">#F1000B</color>
+    <color name="orange">#FF8400</color>
+    <color name="blue">#CB0500BC</color>
+    <color name="light_green">#BBEF84</color> <!-- Deep Green -->
+
+    <color name="deep_green">#002E07</color> <!-- Deep Green -->
+    <color name="dark_green">#004d00</color> <!-- Darker shade for pressed state -->
+    <color name="transparent_green">#CB007D53</color>
+
+    <color name="gradient_green">#486A09</color>
+    <color name="gradient_brown">#AA5309</color>
+    <color name="gradient_brown2">#C87D3D</color>
+    <color name="gradient_Purple2">#2E136C</color>
+    <color name="gradient_Purple">#6E4EB8</color>
+    <color name="cream">#FDFEB0</color>
+
 </resources>
