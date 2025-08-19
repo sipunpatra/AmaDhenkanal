@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             StoryItem(R.drawable.rajbatika, "Dhenkanal Sadar (Dhenkanal Block)", Color.parseColor("#FF9800")),
             StoryItem(R.drawable.budheswar, "Bhuban", Color.parseColor("#673AB7")),
             StoryItem(R.drawable.joranda, "Gondia", Color.parseColor("#03A9F4")),
-            StoryItem(R.drawable.denkanal, "Hindol", Color.parseColor("#F44336")),
+            StoryItem(R.drawable.sapua, "Hindol", Color.parseColor("#F44336")),
             StoryItem(R.drawable.denkanal, "Kamakhyanagar", Color.parseColor("#FF9800")),
             StoryItem(R.drawable.dand, "Kankadahad", Color.parseColor("#673AB7")),
             StoryItem(R.drawable.denkanal, "Odapada", Color.parseColor("#03A9F4")),

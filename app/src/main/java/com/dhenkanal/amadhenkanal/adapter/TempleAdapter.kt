@@ -16,6 +16,7 @@ class TempleAdapter(private val imageList: List<TempleModel>) :RecyclerView.Adap
     inner class TempleViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val image: ImageView = view.findViewById(R.id.templeImage)
         val title: TextView = view.findViewById(R.id.templeName)
+        val location: TextView = view.findViewById(R.id.templeLocation)
         val cardView: MaterialCardView = view.findViewById(R.id.cardView)
     }
     override fun onCreateViewHolder(
@@ -29,12 +30,9 @@ class TempleAdapter(private val imageList: List<TempleModel>) :RecyclerView.Adap
 
     override fun onBindViewHolder(holder: TempleAdapter.TempleViewHolder, position: Int) {
         val item = imageList[position]
-
-        // Set image
-        // Safely set tint to background drawable
-
         holder.image.setImageResource(item.imageRes)
         holder.title.text = item.title
+        holder.location.text=item.location
         holder.cardView.strokeColor = item.borderColor
     }
 

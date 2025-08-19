@@ -24,10 +24,15 @@ class TempleActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         val imageList = listOf(
-            TempleModel(R.drawable.sapua,"Kapilash", Color.parseColor("#BBEF84")),
-            TempleModel(R.drawable.sapua,"Joranda Gadi",Color.parseColor("#AA5309")),
-            TempleModel(R.drawable.sapua,"Saptasajya",Color.parseColor("#007eb3")),
-            TempleModel(R.drawable.kualu,"Kualu",Color.parseColor("#CB007D53")),
+            TempleModel(R.drawable.chandrasekhera,"Baba Chandrashekhar Temple ","Kapilash Rd, Bidharpur,Dhenkanal,Odisha 759016", Color.parseColor("#BBEF84")),
+            TempleModel(R.drawable.joranda,"Joranda Gadi","",Color.parseColor("#AA5309")),
+            TempleModel(R.drawable.saptasajya,"Raghunath temple ","",Color.parseColor("#007eb3")),
+            TempleModel(R.drawable.kualu,"Astasambu temple","",Color.parseColor("#CB007D53")),
+            TempleModel(R.drawable.maabileisunisaktipitha,"Maa Bileisuni","",Color.parseColor("#52959c")),
+            TempleModel(R.drawable.budheswar,"Budheswar Temple","",Color.parseColor("#b18dba")),
+            TempleModel(R.drawable.kapileswar,"Sri Kapileswar Temple","",Color.parseColor("#b18dba")),
+            TempleModel(R.drawable.pathargadasiba,"Pathar Gada Shiba Temple","",Color.parseColor("#96aed6")),
+            TempleModel(R.drawable.daudeswar,"Daodeswar Shiba Temple","",Color.parseColor("#96aed6")),
 
             )
         binding.templeRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
