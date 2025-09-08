@@ -1,14 +1,12 @@
 package com.dhenkanal.amadhenkanal.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dhenkanal.amadhenkanal.R
-import com.dhenkanal.amadhenkanal.adapter.BlockAdapterDetailsAdapter
 import com.dhenkanal.amadhenkanal.adapter.DamAdapter
 import com.dhenkanal.amadhenkanal.databinding.ActivityDamBinding
 import com.dhenkanal.amadhenkanal.model.DamModel
-import com.dhenkanal.amadhenkanal.model.ImageItem
 
 class DamActivity : AppCompatActivity() {
 

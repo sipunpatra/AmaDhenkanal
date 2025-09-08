@@ -16,10 +16,12 @@ import com.dhenkanal.amadhenkanal.adapter.ImageAdapter
 import com.dhenkanal.amadhenkanal.databinding.ActivityMainBinding
 import com.dhenkanal.amadhenkanal.model.ImageItem
 import com.dhenkanal.amadhenkanal.model.StoryItem
+import com.dhenkanal.amadhenkanal.ui.BlockDetailsActivity
 import com.dhenkanal.amadhenkanal.ui.DamActivity
 import com.dhenkanal.amadhenkanal.ui.FamousActivity
 import com.dhenkanal.amadhenkanal.ui.MapActivity
 import com.dhenkanal.amadhenkanal.ui.MoreDetailsActivity
+import com.dhenkanal.amadhenkanal.ui.ReelsActivity
 import com.dhenkanal.amadhenkanal.ui.TempleActivity
 
 class MainActivity : AppCompatActivity() {
@@ -58,7 +60,13 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true }
 //                R.id.nav_what_to_do -> { /* Your code */ true }
-//                R.id.nav_event -> { /* Your code */ true }
+                R.id.nav_reels -> {
+                    startActivity(Intent(this, ReelsActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    })
+                    finish()
+                    true
+                }
                 R.id.nav_famous -> {
                     startActivity(Intent(this, FamousActivity::class.java).apply {
                         addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -99,7 +107,13 @@ class MainActivity : AppCompatActivity() {
             StoryItem(R.drawable.kualu, "Parjang", Color.parseColor("#F44336"))
         )
         storyRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        storyRecycler.adapter = BlockAdapterDetailsAdapter(stories)
+
+        storyRecycler.adapter = BlockAdapterDetailsAdapter(stories) { storyItem ->
+            val intent = Intent(this, BlockDetailsActivity::class.java)
+            intent.putExtra("title", storyItem.title)
+            intent.putExtra("imageRes", storyItem.imageRes)
+            startActivity(intent)
+        }
 
 
          val imageList = listOf(

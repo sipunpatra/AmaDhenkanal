@@ -24,15 +24,15 @@ class TempleActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         val imageList = listOf(
-            TempleModel(R.drawable.chandrasekhera,"Baba Chandrashekhar Temple ","Kapilash Rd, Bidharpur,Dhenkanal,Odisha 759016", Color.parseColor("#BBEF84")),
-            TempleModel(R.drawable.joranda,"Joranda Gadi","",Color.parseColor("#AA5309")),
-            TempleModel(R.drawable.saptasajya,"Raghunath temple ","",Color.parseColor("#007eb3")),
-            TempleModel(R.drawable.kualu,"Astasambu temple","",Color.parseColor("#CB007D53")),
-            TempleModel(R.drawable.maabileisunisaktipitha,"Maa Bileisuni","",Color.parseColor("#52959c")),
-            TempleModel(R.drawable.budheswar,"Budheswar Temple","",Color.parseColor("#b18dba")),
-            TempleModel(R.drawable.kapileswar,"Sri Kapileswar Temple","",Color.parseColor("#b18dba")),
-            TempleModel(R.drawable.pathargadasiba,"Pathar Gada Shiba Temple","",Color.parseColor("#96aed6")),
-            TempleModel(R.drawable.daudeswar,"Daodeswar Shiba Temple","",Color.parseColor("#96aed6")),
+            TempleModel(R.drawable.chandrasekhera,"Baba Chandrashekhar Temple ","Kapilash Rd, Bidharpur,Dhenkanal,Odisha 759016", Color.parseColor("#BBEF84"),20.681694, 85.763111),
+            TempleModel(R.drawable.joranda,"Joranda Gadi","",Color.parseColor("#AA5309"),20.681694, 85.763111),
+            TempleModel(R.drawable.saptasajya,"Raghunath temple ","",Color.parseColor("#007eb3"),20.681694, 85.763111),
+            TempleModel(R.drawable.kualu,"Astasambu temple","",Color.parseColor("#CB007D53"),20.681694, 85.763111),
+            TempleModel(R.drawable.maabileisunisaktipitha,"Maa Bileisuni","",Color.parseColor("#52959c"),20.681694, 85.763111),
+            TempleModel(R.drawable.budheswar,"Budheswar Temple","",Color.parseColor("#b18dba"),20.681694, 85.763111),
+            TempleModel(R.drawable.kapileswar,"Sri Kapileswar Temple","",Color.parseColor("#b18dba"),20.681694, 85.763111),
+            TempleModel(R.drawable.pathargadasiba,"Pathar Gada Shiba Temple","",Color.parseColor("#96aed6"),20.681694, 85.763111),
+            TempleModel(R.drawable.daudeswar,"Daodeswar Shiba Temple","",Color.parseColor("#96aed6"),20.681694, 85.763111),
 
             )
         binding.templeRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

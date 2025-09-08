@@ -40,6 +40,13 @@ class MoreDetailsActivity : AppCompatActivity() {
                     finish()
                     true
                 }
+                R.id.nav_reels -> {
+                    startActivity(Intent(this, ReelsActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    })
+                    finish()
+                    true
+                }
                 R.id.nav_famous -> {
                     startActivity(Intent(this, FamousActivity::class.java).apply {
                         addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

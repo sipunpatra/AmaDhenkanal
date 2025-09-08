@@ -10,6 +10,10 @@
         android:icon="@drawable/location"
         android:title="Map" />
     <item
+        android:id="@+id/nav_reels"
+        android:icon="@drawable/reels"
+        android:title="Reels" />
+    <item
         android:id="@+id/nav_famous"
         android:icon="@drawable/actress"
         android:title="Famous" />

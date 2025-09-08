@@ -1,5 +1,6 @@
 package com.dhenkanal.amadhenkanal.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +10,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.dhenkanal.amadhenkanal.R
 import com.dhenkanal.amadhenkanal.model.StoryItem
+import com.dhenkanal.amadhenkanal.ui.BlockDetailsActivity
 import com.google.android.material.imageview.ShapeableImageView
 
-class BlockAdapterDetailsAdapter(private val list: List<StoryItem>) :
+class BlockAdapterDetailsAdapter(private val list: List<StoryItem>,
+                                 private val onItemClick: (StoryItem) -> Unit
+) :
     RecyclerView.Adapter<BlockAdapterDetailsAdapter.StoryViewHolder>() {
 
     inner class StoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -38,6 +42,11 @@ class BlockAdapterDetailsAdapter(private val list: List<StoryItem>) :
 
         // Set title
         holder.title.text = item.title
+
+        holder.itemView.setOnClickListener {
+            onItemClick(item)
+        }
+
     }
 
     override fun getItemCount() = list.size

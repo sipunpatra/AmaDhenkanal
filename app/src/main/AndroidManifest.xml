@@ -20,6 +20,12 @@
         android:theme="@style/Theme.AmaDhenkanal"
         tools:targetApi="31">
         <activity
+            android:name=".ui.BlockDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ReelsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.FamousActivity"
             android:exported="false" />
         <activity
