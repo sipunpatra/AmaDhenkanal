@@ -1,5 +1,6 @@
 package com.dhenkanal.amadhenkanal.ui
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -36,6 +37,11 @@ class TempleActivity : AppCompatActivity() {
 
             )
         binding.templeRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.templeRecycler.adapter = TempleAdapter(imageList)
+        binding.templeRecycler.adapter = TempleAdapter(imageList){ selectedTemple ->
+            // Handle double tap → open DetailsActivity
+            val intent = Intent(this, TempleDetailsActivity::class.java)
+//            intent.putExtra("temple_data", selectedTemple) // make TempleItem Parcelable/Serializable
+            startActivity(intent)
+        }
     }
 }

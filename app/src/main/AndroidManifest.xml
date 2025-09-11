@@ -20,6 +20,9 @@
         android:theme="@style/Theme.AmaDhenkanal"
         tools:targetApi="31">
         <activity
+            android:name=".ui.TempleDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.BlockDetailsActivity"
             android:exported="false" />
         <activity
