@@ -4,6 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.dhenkanal.amadhenkanal.MainActivity
 import com.dhenkanal.amadhenkanal.R
 import com.dhenkanal.amadhenkanal.databinding.ActivityFamousBinding

@@ -62,5 +62,15 @@ dependencies {
     implementation ("com.google.android.exoplayer:exoplayer:2.19.1")
 
 
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+
+    // Gson converter (for JSON parsing)
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+
+    // (Optional) OkHttp for logging network calls
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
 
 }

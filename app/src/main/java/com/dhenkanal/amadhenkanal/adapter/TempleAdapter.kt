@@ -13,7 +13,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dhenkanal.amadhenkanal.R
-import com.dhenkanal.amadhenkanal.model.StoryItem
 import com.dhenkanal.amadhenkanal.model.TempleModel
 import com.google.android.material.card.MaterialCardView
 
@@ -29,6 +28,7 @@ class TempleAdapter(
         val image: ImageView = view.findViewById(R.id.templeImage)
         val title: TextView = view.findViewById(R.id.templeName)
         val location: TextView = view.findViewById(R.id.templeLocation)
+        val near :TextView =view.findViewById(R.id.nearest)
         val cardView: MaterialCardView = view.findViewById(R.id.cardView)
         val locationIcon: ImageView = itemView.findViewById(R.id.locationIcon)
         val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandableLayout)
@@ -50,6 +50,7 @@ class TempleAdapter(
         holder.title.text = item.title
         holder.location.text = item.location
         holder.cardView.strokeColor = item.borderColor
+        holder.near.text=item.details
 
         val isExpanded = position == expandedPosition
         holder.expandableLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE

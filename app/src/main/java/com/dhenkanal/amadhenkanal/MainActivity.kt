@@ -2,12 +2,13 @@ package com.dhenkanal.amadhenkanal
 
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -44,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         uiInitialization()
     }
 
@@ -92,8 +92,6 @@ class MainActivity : AppCompatActivity() {
             val intent =Intent(applicationContext,TempleActivity::class.java)
             startActivity(intent)
         }
-
-
         val storyRecycler = findViewById<RecyclerView>(R.id.storyRecycler)
 
         val stories = listOf(
