@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     true }
 //                R.id.nav_what_to_do -> { /* Your code */ true }
+
                 R.id.nav_reels -> {
                     startActivity(Intent(this, ReelsActivity::class.java).apply {
                         addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

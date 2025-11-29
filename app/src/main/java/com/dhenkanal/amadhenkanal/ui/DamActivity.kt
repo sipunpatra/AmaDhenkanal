@@ -15,10 +15,12 @@ class DamActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDamBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
+
         val imageList = listOf(
             DamModel(R.drawable.dand,"Dandadhara Dam","Nestled in the lap of nature, Dandadhar Dam is one of the most enchanting spots in Dhenkanal District,Kankadahada Block, Odisha. Built across the serene Ramial River, the dam is surrounded by rolling hills, lush green forests, and tranquil waters, creating a picture-perfect setting for nature lovers."),
             DamModel(R.drawable.sapua,"Sapua Dam","Sapua Dam is a blend of natural beauty, rural charm, and peaceful surroundings, making it one of the most beautiful offbeat destinations in Dhenkanal."),
@@ -26,6 +28,9 @@ class DamActivity : AppCompatActivity() {
 
                  )
         binding.DamRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        binding.DamRecycler.adapter = DamAdapter(imageList)
+        binding.DamRecycler.adapter = DamAdapter(
+            imageList,
+            { onBackPressedDispatcher.onBackPressed() }
+        )
     }
 }
